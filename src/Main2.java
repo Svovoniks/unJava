@@ -43,7 +43,7 @@ class Main2 {
         System.out.println(isAnagram("listen", "silent"));
         System.out.println(isAnagram("eleven plus two", "twelve plus one"));
         System.out.println(isAnagram("hello", "world"));
-        System.out.println();
+
     }
 
     public static boolean duplicateChars(String st){
@@ -127,6 +127,9 @@ class Main2 {
     }
 
     public static boolean isAnagram(String str1, String str2) {
+        str1 = str1.replaceAll("[\\p{Punct}\\s]", "");
+        str2 = str2.replaceAll("[\\p{Punct}\\s]", "");
+
         char[] arr1 = str1.toCharArray();
         Arrays.sort(arr1);
         char[] arr2 = str2.toCharArray();
