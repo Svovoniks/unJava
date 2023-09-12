@@ -55,8 +55,6 @@ class Main2 {
         return false;
     }
 
-
-
     public static String getInitials(String name) {
         char[] initials = new char[2];
         initials[0] = name.charAt(0);
@@ -112,10 +110,9 @@ class Main2 {
 
     public static String pseudoHash(int num) {
         StringBuilder builder = new StringBuilder();
-        String str = "0123456789abcdef";
         Random random = new Random(num);
         for (int i = 0; i < num; i++){
-            builder.append(str.charAt(random.nextInt(str.length())));
+            builder.append(Integer.toHexString(random.nextInt(16)));
         }
         return builder.toString();
     }
