@@ -19,9 +19,12 @@ public class HashTable <K, V> {
 
 
     private LinkedList<Entry<K, V>>[] table;
+    private int _size;
+
 
     public HashTable(){
         table = new LinkedList[42];
+        _size = 0;
     }
     public void put(K key, V value) {
         int index = hash(key);
@@ -29,7 +32,7 @@ public class HashTable <K, V> {
         if (index > table.length - 1){
             LinkedList<Entry<K, V>>[] newTable = new LinkedList[
                     Math.max(table.length * 2, index + 1)];
-            System.arraycopy(table, 0, newTable, 0, newTable.length);
+            System.arraycopy(table, 0, newTable, 0, table.length);
             table = newTable;
         }
 
@@ -45,6 +48,7 @@ public class HashTable <K, V> {
         }
 
         table[index].add(new Entry<>(key, value));
+        _size++;
     }
 
     public V get(K key){
@@ -55,7 +59,8 @@ public class HashTable <K, V> {
         }
 
         for (Entry<K, V> entry : table[index]){
-            if (entry.key == key){
+
+            if (entry.key.equals(key)){
                 return entry.value;
             }
         }
@@ -71,11 +76,20 @@ public class HashTable <K, V> {
         }
 
         for (Entry<K, V> entry : table[index]){
-            if (entry.key == key) {
+            if (entry.key.equals(key)) {
                 table[index].remove(entry);
+                _size--;
                 return;
             }
         }
 
+    }
+
+    public int size() {
+        return _size;
+    }
+
+    public boolean isEmpty(){
+        return _size == 0;
     }
 }
