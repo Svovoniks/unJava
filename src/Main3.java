@@ -117,7 +117,6 @@ public class Main3 {
     public static ArrayList<String> salesData(String[][] arr){
         int maxLength = 0;
         ArrayList<String> list = new ArrayList<>();
-
         for (String[] i : arr){
             if (i.length > maxLength){
                 maxLength = i.length;
@@ -130,6 +129,21 @@ public class Main3 {
         }
         return list;
     }
+//    public static ArrayList<String> salesDatas(String[][] arr){
+//        ArrayList<String> list = new ArrayList<>();
+//        HashSet<String> str = new HashSet<>();
+//        for (String[] i : arr){
+//            for(int c = 1; c < i.length; c++){
+//                str.add(i[c]);
+//            }
+//        }
+//        for (String[] i : arr){
+//            if (str.size() + 1 == i.length){
+//                list.add(i[0]);
+//            }
+//        }
+//        return list;
+//    }
     public static boolean validSplit(String str){
         String[] arr = str.split(" ");
         for (int i = 1; i < arr.length; i++){
@@ -140,9 +154,9 @@ public class Main3 {
         return true;
     }
     public static boolean waveForm(int[] arr){
-        boolean flag = arr[0] - arr[1] > 0;
+        boolean flag = arr[0] - arr[1] < 0;
         for (int i = 2; i < arr.length; i++){
-            if (arr[i-1] - arr[i] > 0 != flag){
+            if (arr[i-1] - arr[i] < 0 != flag){
                 flag = !flag;
             }
             else{
@@ -153,7 +167,7 @@ public class Main3 {
     }
     public static char commonVovel(String str){
         HashMap<Character, Integer> map = new HashMap<>();
-        String vowels = "uioa";
+        String vowels = "uioaye";
         for (Character c : str.toLowerCase().toCharArray()){
             if (!vowels.contains(c.toString())){
                 continue;
