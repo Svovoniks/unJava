@@ -43,7 +43,8 @@ public class TopWords {
         List<Map.Entry<String, Integer>> list = map
                 .entrySet()
                 .stream()
-                .sorted((a, b) -> Integer.compare(b.getValue(), a.getValue())).collect(Collectors.toList());
+                .sorted((a, b) -> Integer.compare(b.getValue(), a.getValue()))
+                .collect(Collectors.toList());
 
         for (int i = 0; i < 10 && i < list.size(); i++){
             System.out.println(list.get(i).getKey());
