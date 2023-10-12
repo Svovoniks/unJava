@@ -1,3 +1,6 @@
+import lab3.HashTable;
+
+import javax.management.StringValueExp;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
