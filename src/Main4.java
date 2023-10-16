@@ -13,11 +13,11 @@ public class Main4 {
 
         System.out.println(generateBrackets(1));
         System.out.println(generateBrackets(2));
-        System.out.println(generateBrackets(3));
+        System.out.println(generateBrackets(5));
         System.out.println();
 
         System.out.println(Arrays.toString(binarySystem(3)));
-        System.out.println(Arrays.toString(binarySystem(4)));
+        System.out.println(Arrays.toString(binarySystem(5)));
         System.out.println();
 
         System.out.println(alphabeticRow("abcdjuwx"));
