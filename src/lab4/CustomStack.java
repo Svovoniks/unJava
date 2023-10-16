@@ -5,8 +5,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class CustomStack<T> {
-    private Stack<T> stack;
-    private T[] arr;
+    private final Stack<T> stack;
     public CustomStack(){
         stack = new Stack<>();
     }

@@ -7,19 +7,26 @@ import java.util.stream.Stream;
 public class FileFail {
     public static void main(String[] args) {
         fail("je", "ja");
-        fail("E:\\file", "E:\\newfile");
+        fail("errorFile", "newErrorFile");
     }
 
     private static void fail(String name, String dest){
+        SecurityManager manager = new SecurityManager();
         try (FileInputStream inputStream = new FileInputStream(name);
              FileOutputStream outputStream = new FileOutputStream(dest)) {
 
-            outputStream.write(inputStream.readAllBytes());
+            manager.checkRead(name);
+            manager.checkWrite(dest);
 
-
-        } catch (FileNotFoundException e) {
+            inputStream.transferTo(outputStream);
+        }
+        catch (SecurityException e){
+            System.out.println("Access denied");
+        }
+        catch (FileNotFoundException e) {
             System.out.println("File not found");
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             System.out.println(e);
         }
     }
