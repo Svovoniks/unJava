@@ -13,7 +13,8 @@ public class Links {
             Pattern pattern = Pattern.compile("https?://[^\\s]+");
             Matcher matcher = pattern.matcher(str);
 
-            str = matcher.replaceAll(matchResult -> "<a href=\"" +  matchResult.group() + "\">" + matchResult.group() + "</a>");
+            str = matcher.replaceAll(matchResult -> "<a href=\""
+                    +  matchResult.group() + "\">" + matchResult.group() + "</a>");
         }
         catch (NullPointerException e){
             System.out.println(e);

@@ -9,7 +9,6 @@ public class NumberFinder {
         Pattern pattern = Pattern.compile("\\d+\\.*\\d*");
         Matcher matcher = pattern.matcher(str);
 
-
         while (matcher.find()) {
             try {
                 System.out.println(Integer.parseInt(matcher.group()));
@@ -17,9 +16,6 @@ public class NumberFinder {
             catch (Exception ex){
                 System.out.println(Double.parseDouble(matcher.group()));
             }
-
         }
-
-
     }
 }

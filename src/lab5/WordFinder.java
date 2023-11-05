@@ -5,11 +5,13 @@ import java.util.regex.Pattern;
 
 public class WordFinder {
     public static void main(String[] args) {
-        showRightWords("hello goodbye there are thousands, ways to die", 't');
+        showRightWords("the problems of falling up off the tiny mass of the asteroid",
+                't');
     }
 
     private static void showRightWords(String str, char letter){
         try {
+
             Pattern pattern = Pattern.compile("\\b" + letter + "\\w*\\b");
             Matcher matcher = pattern.matcher(str);
 

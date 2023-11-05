@@ -7,6 +7,7 @@ public class PasswordChecker {
     public static void main(String[] args) {
         System.out.println(check(null));
         System.out.println(check("abcdef12D"));
+        System.out.println(check("abcdefldD"));
     }
 
     private static boolean check(String password){
@@ -43,10 +44,5 @@ public class PasswordChecker {
         }
 
         return true;
-
-
-
-
-
     }
 }

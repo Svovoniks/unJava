@@ -182,7 +182,7 @@ public class Main5 {
     }
 
     public static int digitsCount(long i){
-        return i/10 != 0 ?  1 + digitsCount(i/10) : 1;
+        return i/10 != 0 ? 1 + digitsCount(i/10) : 1;
     }
     public static int totalPoints(String[] arr, String word){
         HashMap<Character, Integer> wordMap = toMap(word);
