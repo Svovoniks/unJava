@@ -2,9 +2,11 @@ package lab7;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Warehouse {
-    private ArrayList<Product> stock;
+    private final ArrayList<Product> stock;
+
     public Warehouse(ArrayList<Product> stuff){
         this.stock = stuff;
         stuff.sort(Comparator.comparingInt(Product::getWeight).reversed());

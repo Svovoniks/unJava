@@ -6,9 +6,10 @@ public class Loader implements Runnable{
     private Warehouse warehouse2;
     private Warehouse warehouse1;
     private int totalLoad;
-    private ArrayList<Product> list;
+    private final ArrayList<Product> list;
     private Thread thread;
     private final int MAX_LOAD = 150;
+
     public Loader(Warehouse w1, Warehouse w2){
         warehouse1 = w1;
         warehouse2 = w2;
@@ -31,15 +32,14 @@ public class Loader implements Runnable{
     }
 
     private void unload(){
-        for (int i = 0; i < list.size(); i++) {
-            warehouse2.addStock(list.remove(i));
+        for (Product product : list) {
+            warehouse2.addStock(product);
         }
+        list.clear();
+        totalLoad = 0;
     }
 
     private void loadProduct(Product p){
-        if (totalLoad + p.getWeight() > MAX_LOAD){
-            return;
-        }
         list.add(p);
         totalLoad += p.getWeight();
     }
@@ -49,7 +49,6 @@ public class Loader implements Runnable{
             unload();
         }
     }
-
     public Thread getThread() {
         return thread;
     }

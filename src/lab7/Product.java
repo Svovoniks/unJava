@@ -8,8 +8,6 @@ public class Product {
         this.name = name;
         this.weight = weight;
     }
-
-
     public String getName() {
         return name;
     }

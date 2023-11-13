@@ -50,7 +50,5 @@ public class ParallelMatrix {
         }
 
         System.out.println(max);
-
-
     }
 }

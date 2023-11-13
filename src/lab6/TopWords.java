@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class TopWords {
 
     public static void main(String[] args) {
-        String filePath = "C:\\Users\\svovo\\Desktop\\file.txt";
+        String filePath = "C:\\Users\\svovoniks\\Desktop\\file.txt";
 
         File file = new File(filePath);
 
@@ -38,7 +38,6 @@ public class TopWords {
         }catch (NullPointerException e){
             System.out.println(e);
         }
-
 
         List<Map.Entry<String, Integer>> list = map
                 .entrySet()

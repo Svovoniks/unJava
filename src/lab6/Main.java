@@ -23,7 +23,5 @@ public class Main {
         System.out.println(sales.getTopItem());
         System.out.println(sales.getTotalItemsSold());
         System.out.println(sales.getTotalRevenue());
-
-
     }
 }
